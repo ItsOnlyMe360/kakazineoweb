@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>KaKazineo Twitch Stream</title>
+	<title>KaKazineo</title>
 	<style>
-body {
-  background: linear-gradient(to bottom right, #630000, #2c0000);
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  color: #FFF;
-  height: 100vh;
-}
-header {
-  background: linear-gradient(to right, #AA0000, #FF0000);
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+		body {
+			background: linear-gradient(to bottom right, #630000, #2c0000);
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			color: #FFF;
+			height: 100vh;
+		}
+		
+		header {
+			background: linear-gradient(to right, #AA0000, #FF0000);
+			padding: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+		
 		h1 {
 			font-size: 48px;
 			margin: 0;
 			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 		}
+		
 		main {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
 			margin: 20px;
 		}
+		
 		iframe {
 			margin: 10px;
+			border: none;
 		}
+		
+		.chat-container {
+			display: flex;
+			flex-direction: column;
+			width: 350px;
+			height: calc(100vh - 200px);
+		}
+		
+		.player-container {
+			width: 620px;
+			height: calc(620px * 0.5625);
+			margin-right: 10px;
+		}
+		
 	</style>
 </head>
 <body>
@@ -40,18 +59,16 @@ header {
 		<h1>KaKazineo</h1>
 	</header>
 	<main>
-		<div id="twitch-embed"></div>
-		<iframe id="chat_embed"
-			src="https://www.twitch.tv/embed/kakazineo/chat?darkpopout&parent=itsonlyme360.github.com"
-			height="500"
-			width="350">
-		</iframe>
+		<div class="player-container">
+			<iframe src="https://player.twitch.tv/?channel=kakazineo&parent=itsonlyme360.github.com" frameborder="0" allowfullscreen="true" scrolling="no" height="100%" width="100%"></iframe>
+		</div>
+		<div class="chat-container">
+			<iframe id="chat_embed"
+				src="https://www.twitch.tv/embed/kakazineo/chat?darkpopout&parent=itsonlyme360.github.com"
+				height="100%"
+				width="100%">
+			</iframe>
+		</div>
 	</main>
-	<script src="https://player.twitch.tv/js/embed/v1.js"></script>
-	<script type="text/javascript">
-		new Twitch.Player("twitch-embed", {
-			channel: "kakazineo"
-		});
-	</script>
 </body>
 </html>
