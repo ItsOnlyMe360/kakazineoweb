@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KaKazineo</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #303030;
+			font-family: sans-serif;
+		}
+
+		header {
+			background: linear-gradient(to right, #ff4d4d, #b20000);
+			padding: 20px;
+			text-align: center;
+		}
+
+		header h1 {
+			color: #fff;
+			font-size: 36px;
+			margin: 0;
+		}
+
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			margin-top: 30px;
+			padding: 0 20px;
+		}
+
+		.iframe-wrapper {
+			margin: 0 10px;
+			width: calc(50% - 20px);
+			height: 378px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0,0,0,.2);
+			border-radius: 5px;
+		}
+
+		iframe {
+			display: block;
+			margin: 0 auto;
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+
+		.overlay-wrapper {
+			margin: 0 10px;
+			width: calc(50% - 20px);
+			max-height: 378px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0,0,0,.2);
+			border-radius: 5px;
+			overflow: hidden;
+		}
+
+		.overlay {
+			display: block;
+			margin: 0;
+			max-width: 100%;
+			height: auto;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>KaKazineo</h1>
+	</header>
+
+	<div class="container">
+		<div class="iframe-wrapper">
+			<iframe src="https://player.twitch.tv/?channel=kakazineo&parent=itsonlyme360.github.com" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+		</div>
+
+		<div class="overlay-wrapper">
+			<iframe src="https://www.twitch.tv/embed/kakazineo/chat?parent=itsonlyme360.github.com" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+		</div>
+	</div>
+
+</body>
+</html>
