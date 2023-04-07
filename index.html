@@ -4,71 +4,290 @@
 	<title>KaKazineo</title>
 	<style>
 		body {
-			background: linear-gradient(to bottom right, #630000, #2c0000);
+			background: rgb(24,24,27);
+			background-size: 100% 100%;
+  			width: 100vw;
+  			height: 100vh;
 			margin: 0;
 			padding: 0;
-			font-family: Arial, sans-serif;
-			color: #FFF;
-			height: 100vh;
+			overflow-y: hidden;
+  			overflow-x: hidden;
 		}
 		
-		header {
-			background: linear-gradient(to right, #AA0000, #FF0000);
-			padding: 20px;
+		.header {
+			background: linear-gradient(180deg, rgba(24,24,27,1) 97%, rgba(52,52,59,1) 100%);
+			height: 90px;
 			display: flex;
-			align-items: center;
-			justify-content: center;
-			text-align: center;
+        	align-items: center;
+        	padding: 20px;
 		}
 		
-		h1 {
-			font-size: 48px;
+		.header__avatar {
+			width: 100px;
+        	height: 100px;
+        	border-radius: 50%;
+        	object-fit: cover;
+        	margin-right: 10px;
+
+		}
+
+		.header__text {
 			margin: 0;
-			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+			padding: 0;
+			font-family: Verdana, sans-serif;
+			font-weight: 900;
+			font-size: 72px;
+  			background: white;
+  			-webkit-background-clip: text;
+  			-webkit-text-fill-color: transparent;
 		}
 		
-		main {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			margin: 20px;
-		}
-		
-		iframe {
-			margin: 10px;
+		button {
+			background-color: #FF004E;
+			color: white;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 10px;
 			border: none;
+			border-radius: 14px;
+			margin: 10px;
+			cursor: pointer;
+			transition: 0.3s;
+			text-align: left;
+			position: absolute;
+			left: 0cm;
 		}
 		
-		.chat-container {
-			display: flex;
+		button:hover {
+			background-color: white;
+			color: #FF004E;
+			left: 30px;
+		}
+		
+		#youtube-buttons {
+		display: none;
+		opacity: 0;
+		transition: opacity 0.5s ease-in-out;
+		animation: fadeinleft 0.5s;
+		animation-fill-mode: forwards;
+		}
+
+		#youtube-buttons:hover,
+		#youtube:hover ~ #youtube-buttons {
+		opacity: 1;
+		transform: translateX(0);
+		}
+
+		#youtube-buttons.fade-out {
+		animation: fadeoutleft 0.5s;
+		animation-fill-mode: forwards;
+		}
+
+		@keyframes fadeinleft {
+		from {
+			opacity: 0;
+			transform: translateX(-20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+		}
+
+		@keyframes fadeoutleft {
+		from {
+			opacity: 1;
+			transform: translateX(0);
+		}
+		to {
+			opacity: 0;
+			transform: translateX(-20px);
+		}
+		}
+
+		#youtube {
+		background-color: rgb(255, 0, 0);
+		color: white;
+		transition: 0.7s;
+		flex-direction: column;
+		align-items: left;
+		top: 210px;
+		}
+
+		#youtube:hover {
+		background-color: white;
+		color: red;
+		left: 30px;
+		position: absolute;
+		padding: 20px;
+		}
+
+		#youtube-buttons button:hover,
+		#youtube-buttons button.active {
+		background-color: white;
+		color: red;
+		}
+
+		#instagram:hover {
+			color: linear-gradient(149deg, rgba(64,93,230,1) 0%, rgba(131,58,180,1) 31%, rgba(247,119,55,1) 100%, rgba(253,29,29,1) 100%);
+			left: 30px;
+			padding: 20px;
+		}
+
+		#instagram {
+			background: rgb(64,93,230);
+			background: linear-gradient(149deg, rgba(64,93,230,1) 0%, rgba(131,58,180,1) 31%, rgba(247,119,55,1) 100%, rgba(253,29,29,1) 100%);
+			color: white;
+			transition: 0.7s;
 			flex-direction: column;
-			width: 350px;
-			height: calc(100vh - 200px);
+  			align-items: left;
+			top: 420px;
 		}
-		
-		.player-container {
-			width: 620px;
-			height: calc(620px * 0.5625);
-			margin-right: 10px;
+
+		#twitch:hover {
+			background-color: white;
+			left: 30px;
+			padding: 20px;
 		}
-		
+
+		#twitch {
+			background: rgb(79,66,181);
+			background: linear-gradient(149deg, rgba(79,66,181,1) 0%, rgba(102,51,153,1) 58%, rgba(102,51,153,1) 100%);
+			color: white;
+			transition: 0.7s;
+			flex-direction: column;
+  			align-items: left;
+			top: 350px;
+		}
+
+		#twitter:hover {
+			left: 30px;
+			padding: 20px;
+		}
+
+		#twitter {
+			background: rgb(29,161,242);
+			background: linear-gradient(149deg, rgba(29,161,242,1) 0%, rgba(96,185,240,1) 53%, rgba(225,232,237,1) 100%, rgba(225,232,237,1) 100%);
+			color: white;
+			transition: 0.7s;
+			flex-direction: column;
+  			align-items: left;
+			top: 280px;
+		}
+
+		#teorecas {
+			position: absolute;
+			left: 150px;
+			top: -3px;
+		}
+
+		#kakazineo {
+			position: absolute;
+			left: 150px;
+			top: 30px;
+		}
+
+		#kakazineo-craft {
+			position: absolute;
+			left: 150px;
+			top: 62px;
+		}
+
+		#texto {
+			font-family: Verdana, sans-serif;
+			font-size: 20px;
+  			color: white;
+			margin: 30px;
+		}
+
+		#header iframe {
+		width: 600px;
+		height: 300px;
+		}
+
+		iframe {
+			border: none;
+			margin-right: auto;
+		}
+
 	</style>
 </head>
 <body>
-	<header>
-		<h1>KaKazineo</h1>
+    <header class="header">
+		<img class="header__avatar" src="https://static-cdn.jtvnw.net/jtv_user_pictures/ede0b666-3f4f-4951-ac70-6eed8ef0c371-profile_image-70x70.png" alt="Avatar">
+		<h1 class="header__text">kakazineoㅤㅤㅤㅤㅤ</h1>
+		<div class="iframe-container">
+			<iframe src="https://streamelements.com/overlay/642f5eceed4216bfb28f1fe9/nyxUXTAD9SE070pUcHDN"></iframe>
+		  </div>
 	</header>
-	<main>
-		<div class="player-container">
-			<iframe src="https://player.twitch.tv/?channel=kakazineo&parent=itsonlyme360.github.com" frameborder="0" allowfullscreen="true" scrolling="no" height="100%" width="100%"></iframe>
-		</div>
-		<div class="chat-container">
-			<iframe id="chat_embed"
-				src="https://www.twitch.tv/embed/kakazineo/chat?darkpopout&parent=itsonlyme360.github.com"
-				height="100%"
-				width="100%">
-			</iframe>
-		</div>
-	</main>
+
+	<p id="texto">
+		o grande careca da internet.
+	</p>
+	
+	<div style="display: flex; justify-content: center;">
+		<button id="instagram">Instagram</button>
+		<button id="twitch">Twitch</button>
+		<button id="twitter">Twitter</button>
+		<button id="youtube">Youtube</button>
+	</div>
+	
+	<div id="youtube-buttons">
+		<button id="kakazineo">KaKazineo</button>
+		<button id="kakazineo-craft">KaKazineo Craft</button>
+		<button id="teorecas">Teorecas</button>
+	</div>
+	
+	<script>
+		var youtubeButton = document.getElementById("youtube");
+		var youtubeButtons = document.getElementById("youtube-buttons");
+	
+		youtubeButton.onclick = function() {
+			if (youtubeButtons.style.display === "none") {
+				youtubeButtons.style.display = "flex";
+				youtubeButtons.style.alignItems = "center";
+				youtubeButtons.classList.remove("fade-out");
+				youtubeButtons.classList.add("fade-in");
+				youtubeButton.classList.add("active");
+			} else {
+				youtubeButtons.classList.remove("fade-in")
+				youtubeButton.classList.remove("active");
+				youtubeButtons.classList.add("fade-out");
+				setTimeout(function() {
+					youtubeButtons.style.display = "none";
+				}, 500);
+			}
+		}
+	
+		var instagramButton = document.getElementById("instagram");
+		instagramButton.onclick = function() {
+			window.location.href = "https://www.instagram.com/kakajardel/";
+		}
+	
+		var twitchButton = document.getElementById("twitch");
+		twitchButton.onclick = function() {
+			window.location.href = "https://www.twitch.tv/kakazineo";
+		}
+	
+		var twitterButton = document.getElementById("twitter");
+		twitterButton.onclick = function() {
+			window.location.href = "https://www.twitter.com/okakazineo";
+		}
+	
+		var kakazineoButton = document.getElementById("kakazineo");
+		kakazineoButton.onclick = function() {
+			window.location.href = "https://www.youtube.com/kakazineo";
+		}
+	
+		var kakazineoCraftButton = document.getElementById("kakazineo-craft");
+		kakazineoCraftButton.onclick = function() {
+			window.location.href = "https://www.youtube.com/@kakazineocraft";
+		}
+	
+		var teorecasButton = document.getElementById("teorecas");
+		teorecasButton.onclick = function() {
+			window.location.href = "https://www.youtube.com/@teorecas6468";
+		}
+	</script>	
 </body>
 </html>
